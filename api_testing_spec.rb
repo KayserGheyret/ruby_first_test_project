@@ -20,6 +20,7 @@ describe 'API Practice - ' do
     # dog_api_test = DogAPIPractice.new('Dog API',1)
     dog_api_test = DogAPIPractice.new
     p parsed_json = JSON.parse(dog_api_test.random_dog_image.response.body)
+    expect(dog_api_test.random_dog_image.response.code.to_i).to be 200
   end
 
   it 'List All Breeds API' do
@@ -27,6 +28,11 @@ describe 'API Practice - ' do
     p parsed_json = JSON.parse(all_breeds.all_breeds.response.body)
     # p parsed_json['message'].include? 'bulldog'
     # p parsed_json['message'].keys.index('bulldog')
+    expect(all_breeds.all_breeds.response.code.to_i).to be 200
+  end
+
+  it 'Test VCS' do
+    print('VCS passed')
   end
 end
 
